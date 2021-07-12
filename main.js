@@ -63,3 +63,32 @@ class UI {
     document.querySelector("#read").value = "";
   }
 }
+
+// Store Class: Handles Storage this is local storage
+
+class Store {
+  static getBooks() {
+    let books;
+    if (localStorage.getItem("books") === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem("books"));
+    }
+    return books;
+  }
+  static addBook(book) {
+    const books = Store.getBooks();
+    books.push(book);
+    localStorage.setItem("books", JSON.stringify(books));
+  }
+  static removeBook(pages) {
+    const books = Store.getBooks();
+    books.forEach((book, index) => {
+      if (book.pages === pages) {
+        books.splice(index, 1);
+      }
+
+      localStorage.setItem("books", JSON.stringify(books));
+    });
+  }
+}
