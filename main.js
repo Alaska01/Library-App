@@ -92,3 +92,23 @@ class Store {
     });
   }
 }
+
+// Change status function for Read and Unread
+
+function change(el) {
+  const parent = el.parentElement;
+  const status = parent.querySelector(".readStatus");
+  const index = el.parentElement.parentElement.rowIndex;
+
+  const books = JSON.parse(localStorage.getItem("books"));
+
+  if (status.innerHTML !== "Read") {
+    status.innerHTML = "Read";
+    books[index - 1].read = "Read";
+    localStorage.setItem("books", JSON.stringify(books));
+  } else {
+    status.innerHTML = "Not read";
+    books[index - 1].read = "Not read";
+    localStorage.setItem("books", JSON.stringify(books));
+  }
+}
