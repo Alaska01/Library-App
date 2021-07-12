@@ -112,3 +112,44 @@ function change(el) {
     localStorage.setItem("books", JSON.stringify(books));
   }
 }
+
+// Events to Display Book
+
+document.addEventListener("DOMContentLoaded", UI.displayBooks);
+
+// Events to Add a Book
+
+document.querySelector("#book-form").addEventListener("submit", (e) => {
+  // Prevent Submit
+  e.preventDefault();
+
+  // get form values
+
+  const title = document.querySelector("#title").value;
+  const author = document.querySelector("#author").value;
+  const pages = document.querySelector("#pages").value;
+
+  // Validate
+
+  if (title === "" || author === "" || pages === "") {
+    UI.showAlert("Please fill in all fields", "danger");
+  } else {
+    // Instanciate Book
+
+    const book = new Book(title, author, pages);
+
+    //   Add Book to List
+
+    UI.addBookToList(book);
+
+    // Add Book to Store
+
+    Store.addBook(book);
+
+    UI.showAlert("Book Added", "success");
+
+    // clear Fields
+
+    UI.clearFields();
+  }
+});
