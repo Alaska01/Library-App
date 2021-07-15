@@ -29,7 +29,7 @@ To get a local copy of the repository please run the following commands on your 
 
 ## Live version
 
-<a href="https://aye-library-app.netlify.app/">Click here</a>
+<a href="https://aye-library-app.netlify.app/" target="_blank">Click here</a>
 
 ## Author
 
@@ -46,7 +46,7 @@ To get a local copy of the repository please run the following commands on your 
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Godswilly/library/issues).
+Feel free to check the [issues page](https://github.com/Alaska01/Library-App/issues).
 
 ## Show your support
 

@@ -1,10 +1,8 @@
-class Book {
-  constructor(author, title, pages, read) {
-    this.author = author;
-    this.title = title;
-    this.pages = pages;
-    this.read = read;
-  }
+function Book(author, title, pages, read) {
+  this.author = author;
+  this.title = title;
+  this.pages = pages;
+  this.read = read;
 }
 
 function getBooks() {
@@ -53,7 +51,7 @@ function showAlert(message, className) {
   const div = document.createElement('div');
   div.className = `alert alert-${className}`;
   div.appendChild(document.createTextNode(message));
-  const container = document.querySelector('.col-md-8');
+  const container = document.querySelector('.display1');
   const form = document.querySelector('#book-form');
   container.insertBefore(div, form);
 
