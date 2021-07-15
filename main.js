@@ -65,8 +65,6 @@ function clearFields() {
   document.querySelector('#read').value = '';
 }
 
-// Save to Local Storage
-
 function addBook(book) {
   const books = getBooks();
   books.push(book);
@@ -87,8 +85,6 @@ function removeBook(title) {
   localStorage.setItem('books', JSON.stringify(books));
 }
 
-// Change status
-
 // eslint-disable-next-line no-unused-vars
 function change(el) {
   const parent = el.parentElement;
@@ -108,10 +104,8 @@ function change(el) {
   }
 }
 
-// Display the Books
 document.addEventListener('DOMContentLoaded', displayBooks);
 
-// Event: Add a Book
 document.querySelector('#book-form').addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -120,7 +114,6 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   const pages = document.querySelector('#pages').value;
   const read = document.querySelector('#read').value;
 
-  // validate
   if (author === '' || title === '' || pages === '') {
     showAlert('please fill in all fields', 'danger');
   } else {
@@ -132,12 +125,9 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
     showAlert('Book Added', 'success');
 
-    // Clear Fields
     clearFields();
   }
 });
-
-// Event: Remove a book
 
 document.querySelector('#book-list').addEventListener('click', (e) => {
   deleteBook(e.target);
@@ -148,7 +138,6 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   showAlert('Book Removed', 'danger');
 });
 
-// Hide form on page load
 const bookForm = document.getElementById('book-form');
 const createBook = document.getElementById('createBook');
 
