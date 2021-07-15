@@ -29,7 +29,7 @@ To get a local copy of the repository please run the following commands on your 
 
 ## Live version
 
-<a href="https://rawcdn.githack.com/Godswilly/library/ae3a2e89b81f1dcf608a18e51936a6ad32ddfec4/index.html">Click here</a>
+<a href="https://aye-library-app.netlify.app/">Click here</a>
 
 ## Author
 
