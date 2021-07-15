@@ -90,8 +90,9 @@ function removeBook(title) {
 }
 
 // Change status
+
+// eslint-disable-next-line no-unused-vars
 function change(el) {
-  // eslint-disable-line no-unused-vars
   const parent = el.parentElement;
   const status = parent.querySelector('.readStatus');
   const index = el.parentElement.parentElement.rowIndex;
@@ -139,6 +140,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 });
 
 // Event: Remove a book
+
 document.querySelector('#book-list').addEventListener('click', (e) => {
   deleteBook(e.target);
   const a =
